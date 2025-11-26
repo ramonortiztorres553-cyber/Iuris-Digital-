@@ -1,0 +1,86 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>IurisDigital — Plataforma</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <h1>IurisDigital</h1>
+    <nav>
+      <button id="btnShowRegister">Registro / Login</button>
+      <button id="btnPlans">Planes</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="hero" class="card">
+    <h2>Asistente legal con planes gratuitos y premium</h2>
+    <p>Regístrate, elige un plan y accede a un chatbot especializado y plantillas legales.</p>
+    <div class="actions">
+      <button id="startRegister">Crear cuenta</button>
+      <button id="startChat" disabled>Abrir Chat (login req.)</button>
+    </div>
+  </section>
+
+  <section id="registro" class="card hidden">
+    <h3>Registro / Login</h3>
+    <form id="registerForm">
+      <input id="name" placeholder="Nombre (opcional)">
+      <input id="email" placeholder="Correo" type="email" required>
+      <input id="password" placeholder="Contraseña" type="password" required>
+      <select id="planSelect">
+        <option value="gratuito">Gratuito</option>
+        <option value="premium">Premium</option>
+      </select>
+      <div class="row">
+        <button id="btnRegister" type="button">Registrar</button>
+        <button id="btnLogin" type="button">Iniciar sesión</button>
+      </div>
+      <div id="registerMsg" class="muted"></div>
+    </form>
+  </section>
+
+  <section id="plans" class="card hidden">
+    <h3>Planes</h3>
+    <div class="plan-grid">
+      <div class="plan">
+        <h4>Gratuito</h4>
+        <p>Funcionalidad básica del chatbot, 10 consultas diarias.</p>
+      </div>
+      <div class="plan premium">
+        <h4>Premium</h4>
+        <p>Chatbot avanzado, respuestas extendidas, plantillas y prioridad.</p>
+        <button id="btnSubscribe" disabled>Suscribirse</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="chatbot" class="card hidden">
+    <h3>IurisBot</h3>
+    <div id="chatWindow" class="chat-window"></div>
+    <div class="chat-controls">
+      <input id="userInput" placeholder="Escribe tu consulta...">
+      <button id="sendBtn">Enviar</button>
+    </div>
+    <div id="chatStatus" class="muted"></div>
+  </section>
+
+  <section id="admin" class="card hidden">
+    <h3>Panel Admin</h3>
+    <pre id="adminData"></pre>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">© IurisDigital</div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
